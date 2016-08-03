@@ -8,6 +8,7 @@ var del = require('del');
 var handlebars = require('gulp-handlebars');
 var insert = require('gulp-insert');
 var change = require('gulp-change');
+var rename = require('gulp-rename');
 
 gulp.task('clean:temp', function() {
 	return del(['temp/**/*']);
@@ -34,7 +35,10 @@ var prepareData = function(content) {
 };
 
 gulp.task('prepare:data', function() {
-	return 
+	return gulp.src('temp/repo/*.json')
+		.pipe(change(prepareData))
+		.pipe(rename({basename:'data'}))
+		.pipe(gulp.dest('temp'));
 });
 
 
