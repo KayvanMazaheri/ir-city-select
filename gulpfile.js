@@ -15,7 +15,7 @@ gulp.task('clean:temp', function() {
 	return del(['temp/**/*']);
 });
 
-gulp.task('clone:repo', function() {
+gulp.task('clone:repo', ['clean:temp'], function() {
 	return git.clone(DataRepo, {args: './temp/repo'}, function(err) {
 		throw err;
 	});
@@ -35,14 +35,14 @@ var prepareData = function(content) {
 	return result;
 };
 
-gulp.task('prepare:data', function() {
+gulp.task('prepare:data', ['clone:repo'], function() {
 	return gulp.src('temp/repo/*.json')
 		.pipe(change(prepareData))
 		.pipe(rename({basename:'data'}))
 		.pipe(gulp.dest('temp'));
 });
 
-gulp.task('add:data', function() {
+gulp.task('add:data', ['prepare:data'], function() {
 	var data = require('./temp/data.json');
 	
 	if(!data)
@@ -60,6 +60,4 @@ gulp.task('add:data', function() {
 });
 
 
-gulp.task('default', function() {
-	
-});
+gulp.task('default', ['clean:temp', 'clone:repo', 'prepare:data', 'add:data']);
