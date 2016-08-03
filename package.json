@@ -1,0 +1,27 @@
+{
+  "name": "ir-city-select",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KayvanMazaheri/ir-city-select.git"
+  },
+  "keywords": [
+    "iran",
+    "province",
+    "city",
+    "cities",
+    "provinces",
+    "jquery"
+  ],
+  "author": "Kayvan Mazaheri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KayvanMazaheri/ir-city-select/issues"
+  },
+  "homepage": "https://github.com/KayvanMazaheri/ir-city-select#readme"
+}
