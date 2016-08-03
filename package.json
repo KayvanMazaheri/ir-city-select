@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/KayvanMazaheri/ir-city-select/issues"
   },
-  "homepage": "https://github.com/KayvanMazaheri/ir-city-select#readme"
+  "homepage": "https://github.com/KayvanMazaheri/ir-city-select#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
