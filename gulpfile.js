@@ -9,6 +9,7 @@ var handlebars = require('gulp-handlebars');
 var insert = require('gulp-insert');
 var change = require('gulp-change');
 var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
 
 gulp.task('clean:temp', function() {
 	return del(['temp/**/*']);
@@ -39,6 +40,23 @@ gulp.task('prepare:data', function() {
 		.pipe(change(prepareData))
 		.pipe(rename({basename:'data'}))
 		.pipe(gulp.dest('temp'));
+});
+
+gulp.task('add:data', function() {
+	var data = require('./temp/data.json');
+	
+	if(!data)
+		throw 'data.json is not available';
+
+	var line = 'var data = ' + data + ';'
+	
+	return gulp.src('index.js')
+		.pipe(rename{basename:'ir-city-select'})
+		.pipe(insert.prepend(line))
+		.pipe(gulp.dest('dist/'))
+		.pipe(uglify())
+		.pipe(rename({extname: '.min.js'}))
+		.pipe(gulp.dest('dist/'));
 });
 
 
