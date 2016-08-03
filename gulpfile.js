@@ -3,9 +3,7 @@ const DataFile = 'iran_cities_with_coordinates.json';
 
 var gulp = require('gulp');
 var git = require('gulp-git');
-var data = require('gulp-data');
 var del = require('del');
-var handlebars = require('gulp-handlebars');
 var insert = require('gulp-insert');
 var change = require('gulp-change');
 var rename = require('gulp-rename');
