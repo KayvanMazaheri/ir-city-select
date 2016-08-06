@@ -1,8 +1,8 @@
 // `data` should be filled with provinces and their cities in json format
 
 $(document).ready(function() {
-	$('.province').each(loadProvinces);
-	$('.province').change(loadCities);
+	$('.ir-province').each(loadProvinces);
+	$('.ir-province').change(loadCities);
 });
 
 var loadProvinces = function() {
@@ -16,7 +16,7 @@ var loadProvinces = function() {
 };
 
 var loadCities = function() {
-	var citySelector = $(this).closest('div').find('.city');
+	var citySelector = $(this).closest('div.ir-select').find('.ir-city');
 	var selectedProvince = $(this).val();
 	var cityList = data[selectedProvince];
 
