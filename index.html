@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css">
+
+  <style media="screen">
+  @font-face {
+    font-family: Shabnam;
+    src: url('http://rastikerdar.github.io/shabnam-font/Shabnam.eot?v=0.9.1');
+    src: url('http://rastikerdar.github.io/shabnam-font/Shabnam.eot?v=0.9.1#iefix') format('embedded-opentype'),
+    url('http://rastikerdar.github.io/shabnam-font/Shabnam.woff?v=0.9.1') format('woff'),
+    url('http://rastikerdar.github.io/shabnam-font/Shabnam.ttf?v=0.9.1') format('truetype');
+    font-weight: normal;
+  }
+
+  html{
+    direction: rtl !important;
+  }
+
+  pre{
+    direction: ltr ! important;
+  }
+
+  .f {
+    font-family: Shabnam, Roboto, Tahoma,"DejaVu Sans",helvetica,arial,freesans,sans-serif;
+  }
+
+  .section {
+    padding-top: 2rem;
+  }
+
+  .header {
+    background-color: #f4f5f6;
+    width: 100% ;
+    border-top: 0;
+    padding-bottom: 7.5rem;
+    padding-top: 7.5rem;
+    position: relative;
+    text-align: center;
+  }
+  .prettyprint {
+    border: 0 !important;
+    border-left: .3rem solid #9b4dca !important;
+    color: #655d5d;
+  }
+
+  /* string content */
+  .prettyprint .str { color: #4b8b8b; }
+  /* a keyword */
+  .prettyprint .kwd { color: #8464c4; }
+  /* a comment */
+  .prettyprint .com { color: #adadad; }
+  /* a type name */
+  .prettyprint .typ { color: #7272ca; }
+  /* a literal value */
+  .prettyprint .lit { color: #9b4dca; }
+  /* punctuation */
+  .prettyprint .pun { color: #5485b6; }
+  /* lisp open bracket */
+  .prettyprint .opn { color: #f4ecec; }
+  /* lisp close bracket */
+  .prettyprint .clo { color: #f4ecec; }
+  /* a markup tag name */
+  .prettyprint .tag { color: #9b4dca; }
+  /* a markup attribute name */
+  .prettyprint .atn { color: #9b4dca; }
+  /* a markup attribute value */
+  .prettyprint .atv { color: #5485b6; }
+  /* a declaration */
+  .prettyprint .dec { color: #b45a3c; }
+  /* a variable name */
+  .prettyprint .var { color: #ca4949; }
+  /* a function name */
+  .prettyprint .fun { color: #7272ca; }
+  /* markdown content */
+  .prettyprint.lang-md * { color: #655d5d !important; }
+  </style>
+
+  <title>Iran Provinces and Cities &lt;select&gt; for HTML Forms</title>
+</head>
+<body>
+  <div class="header f">
+    <h1>لیست استان ها و شهر های ایران</h1>
+    <h3>برای استفاده در فرم های HTML</h3>
+  </div>
+  <div class="container">
+    <div class="row section">
+      <div class="column f">
+        <h4>درباره پروژه</h4>
+        <p>
+          این بخش در آینده تکمیل می‌شود.
+        </p>
+      </div>
+    </div>
+    <div class="row section">
+      <div class="column f">
+        <h4>نمونه</h4>
+        <div class="container header">
+          <div class="ir-select">
+            <div class="row">
+              <div class="column">
+                <label for="province">استان خود را انتخاب کنید</label>
+                <select class="ir-province" name="province"></select>
+              </div>
+              <div class="column">
+                <label for="city">شهر خود را انتخاب کنید</label>
+                <select class="ir-city" name="city"></select>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row section">
+      <div class="column f">
+        <h4>استفاده</h4>
+        <p>
+          برای استفاده کافی است تکه کد زیر را در فرم خود قرار دهید<br>
+        </p>
+        <pre class="prettyprint"><code class="code-content">&lt;!-- Inside HTML &lt;form&gt; --&gt;
+&lt;div class="ir-select"&gt;
+    &lt;select class="ir-province"&gt;&lt;/select&gt;
+    &lt;select class="ir-city"&gt;&lt;/select&gt;
+&lt;/div&gt;
+</code></pre>
+        <p> سپس این پروژه را به یکی از روش های زیر به صفحه HTML اضافه کنید<br>
+          <b>توجه: </b> این پروژه برای اجرا شدن نیاز به <a href="https://jquery.com/">jQuery</a> دارد.
+        </p>
+        <h5>۱. استفاده از CDN (توصیه می‌شود)</h5>
+        <pre class="prettyprint"><code class="code-content">&lt;!-- jQuery --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- ir-city-select.js --&gt;
+&lt;script src=&quot;https://github.com/KayvanMazaheri/ir-city-select/releases/download/v0.2.0/ir-city-select.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+        <hr/>
+        <h5>۲. از Github دانلود کنید</h5>
+        <a class="button " href="https://github.com/KayvanMazaheri/ir-city-select/releases/latest">دانلود از Github</a>
+        <hr/>
+        <h5>۳. دریافت جدید ترین لیست شهر‌ها و ساختن نسخه‌ی خودتان</h5>
+        <p>قدم اول: کد را دانلود کنید</p>
+        <pre class="prettyprint lang-bash"><code class="code-content">git clone https://github.com/KayvanMazaheri/ir-city-select.git &amp;&amp; cd ir-city-select
+</code></pre>
+        <p>قدم دوم: کد را تغییر دهید (اختیاری)</p>
+        <pre class="prettyprint lang-bash"><code class="code-content">vim index.js
+</code></pre>
+        <p>قدم سوم: نسخه خودتان را بسازید<br><b>نکته: </b>نیاز به <a href="http://gulpjs.com/">gulp</a> دارید</p>
+        <pre class="prettyprint lang-bash"><code class="code-content">gulp
+</code></pre>
+        <p>نسخه‌ی شما آماده است!</p>
+        <pre class="prettyprint lang-bash"><code class="code-content">ir-city-select/
+└── dist/
+    ├── ir-city-select.js
+    └── ir city-select.min.js
+</code></pre>
+
+        <h4>با تشکر از</h4>
+        <ul>
+          <li>این <a href="https://github.com/HosseinRashno/IranAddressJS">پروژه‌ی</a> خوب که الهام‌بخش اصلی این پروژه بود</li>
+          <li>لیست استان ها و شهر های ایران در فرمت JSON در <a href="https://github.com/pesarkhobeee/iran-states-and-cities-json-and-sql-including-area-coordinations">این پروژه</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://github.com/KayvanMazaheri/ir-city-select/releases/download/v0.2.0/ir-city-select.min.js"></script>
+</body>
+</html>
