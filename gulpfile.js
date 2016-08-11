@@ -33,7 +33,10 @@ var prepareData = function(content) {
 			var city = cities[j].name;
 			result[province].push(city);
 		}
+		// Sort the cities list of the current province
+		result[province].sort();
 	}
+	
 	return JSON.stringify(result);
 };
 
